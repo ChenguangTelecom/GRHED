@@ -52,8 +52,11 @@ Noise.m: multiplying a clean image with speckle noise. You can specify the numbe
 
 ## 2. Training HED on the gradient magnitude fields.
 Installing requirements with the following command:
+
 cd GRHED
+
 pip install -r requirements.txt
+
 export OMP_NUM_THREADS=1
 
  Notice that, the original code as well as our implementation are based on python 2.7, but the code cab be modified to be executed on python3, if you do some modifications on print functin ..etc. 
