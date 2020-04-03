@@ -19,17 +19,17 @@ step 3: After generating the data for training, we can train HED on the gradient
 
 Description of the folder 'data/HED-BSDS/':
 
-train: folder of the clean training images
+train: folder of the clean training images.
 
-test: folder of the clean testing images
+test: folder of the clean testing images.
 
-train_mat: path to the speckled optical images for training
+train_mat: path to the speckled optical images for training.
 
-test_mat_speckle: path to the speckled optical images for testing
+test_mat_speckle: path to the speckled optical images for testing.
 
-train_pair.txt: list of path to the training data
+train_pair.txt: list of path to the training data.
 
-test.txt: list of path to the testing data
+test.txt: list of path to the testing data.
 
 train_pair_mat_1look.txt: list of path to the 1-look speckled optical images for training, you should save it as .lst file if you want to use it for training. 
 
@@ -50,7 +50,7 @@ mex mexgrad.c
 
 Noise.m: multiplying a clean image with speckle noise. You can specify the number of looks for the speckle noise.
 
-##2. Training HED on the gradient magnitude fields.
+## 2. Training HED on the gradient magnitude fields.
 Installing requirements with the following command:
 cd GRHED
 pip install -r requirements.txt
@@ -65,8 +65,11 @@ hed-restore.yaml is the config file for continue training. You can set the path 
 The code is modified from the tensorflow implementation of HED in the link 'https://github.com/moabitcoin/holy-edge' 
 
 You can consult the link 'https://github.com/moabitcoin/holy-edge' if you want to know more detailed description. However, there are several modifications in our code:
+
 1. In our implementation, HED is trained from scratch, there is no need to download the pretrained weights of vgg16.
+
 2. the input of the data to the network is .mat files.
+
 3. we have a run-hed-restore.py and hed-restore.yaml for continue training.
 
 After setting up, you can run the following command to download the clean augmented BSDS500 images:
@@ -77,7 +80,9 @@ After downloading, the path to the clean training images should be data/HED-BSDS
 
 ## 3. Training
 export CUDA_VISIBLE_DEVICES=0
+
 export OMP_NUM_THREADS=1
+
 python run-hed.py --train --config-file hed/configs/hed.yaml
 
 You can continue to train HED from a pretrained models with the following command
@@ -85,24 +90,34 @@ python run-hed-restore.py --train --config-file hed/configs/hed-restore.yaml
 
 ## 4. Testing
 Choose a models trained with a certain number of iterations by setting 
+
 test_snapshot: 
+
 located in GRHED/hed/configs/hed.yaml and GRHED/hed/configs/hed-restore.yaml.
 
 Then run 
+
 export CUDA_VISIBLE_DEVICES=0
+
 export OMP_NUM_THREADS=1
+
 python run-hed.py --test --config-file hed/configs/hed.yaml
 
 or run
+
 export CUDA_VISIBLE_DEVICES=0
+
 export OMP_NUM_THREADS=1
+
 python run-hed-restore.py --test --config-file hed/configs/hed-restore.yaml
 
 To better understanding the code of HED, please refer to 'https://github.com/moabitcoin/holy-edge'.
 
 ## 5. Postprocessing to obtain edge maps.
 First copy the gradient magnitude fields computed by GRHED to the folder edgemap
+
 cp -r GRHED-test edgemap/
+
 cd edgemap
 
 Then run demo_map.m to obtain the binary edge map with a certain threshold.
@@ -111,4 +126,5 @@ edgenms.m applies the Non-maxima suppression step used in Structured edge. To su
 After downloading them, you should modify the path to them in edgenms.m
 
 Then you should be able to obtain binary edge maps from the gradient magnitude fields computed by GRHED.
-z
+
+## If you have any questions, please feel free to contact me by email: chenguangl@whu.edu.cn
