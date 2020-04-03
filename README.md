@@ -1,18 +1,15 @@
-GRHED, an edge detector for SAR images
+## GRHED, an edge detector for SAR images
+This repository contains the implementation of paper GRHED [download](https://hal.archives-ouvertes.fr/hal-02424315/). 
 
 version 1.1-March 20, 2020
 by Chenguang Liu 
 Email: chenguangl@whu.edu.cn
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ## NOTICE: 
 The source code of GRHED is modified from the code (tensorflow implementation) of the paper Holistically-Nested Edge Detection (https://dl.acm.org/doi/10.5555/3158436.3158453).
 The code is hosted at 'https://github.com/moabitcoin/holy-edge'
 and also hosted at `https://github.com/harsimrat-eyeem/holy-edge` - Harsimrat Sandhawalia
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-This repository contains the implementation of paper GRHED [download](https://hal.archives-ouvertes.fr/hal-02424315/). 
 
 ## 1. Generate 1-look simulated SAR images and compute their gradient magnitude fields using GR
 step 1: You should download the clean image data according to the instructions in the link 'https://github.com/moabitcoin/holy-edge'. The command to download the clean data can also found below The clean image data should be in the folder 'data/HED-BSDS/'. The path to the clean training image should be located in 'data/HED-BSDS/train' and the path to the clean test image should be in 'data/HED-BSDS/test'.
