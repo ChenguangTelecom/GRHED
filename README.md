@@ -7,8 +7,7 @@ Email: chenguangl@whu.edu.cn
 
 
 ## NOTICE: 
-The source code of GRHED is modified from the code (tensorflow implementation) of the paper Holistically-Nested Edge Detection (https://dl.acm.org/doi/10.5555/3158436.3158453).
-The code is hosted at 'https://github.com/moabitcoin/holy-edge'
+The source code of GRHED is modified from the code (tensorflow implementation) of the paper Holistically-Nested Edge Detection (https://dl.acm.org/doi/10.5555/3158436.3158453). The code is hosted at 'https://github.com/moabitcoin/holy-edge'
 and also hosted at `https://github.com/harsimrat-eyeem/holy-edge` - Harsimrat Sandhawalia
 
 ## 1. Generate 1-look simulated SAR images and compute their gradient magnitude fields using GR
@@ -19,22 +18,36 @@ step 2: After downloading the image, and put them in the right path, you should 
 step 3: After generating the data for training, we can train HED on the gradient magnitude fields.
 
 Description of the folder 'data/HED-BSDS/':
+
 train: folder of the clean training images
+
 test: folder of the clean testing images
+
 train_mat: path to the speckled optical images for training
+
 test_mat_speckle: path to the speckled optical images for testing
 
 train_pair.txt: list of path to the training data
+
 test.txt: list of path to the testing data
+
 train_pair_mat_1look.txt: list of path to the 1-look speckled optical images for training, you should save it as .lst file if you want to use it for training. 
+
 train_pair_mat_1look_alpha_123456.lst: list of path to the gradient magnitude fields computed by GR with alpha=1,2,3,4,5,6, on the speckled optical images listed in train_pair_mat_1look.txt. 
+
 test_1look_natural.txt: list of path to the 1-look speckled optical images for testing. 
+
 test_1look_alpha_123456_natural.txt: list of path to the gradient magnitude fields computed by GR with alpha=1,2,3,4,5,6, on the speckled optical images listed in test_1look_natural.txt.
 
 demo_training_data.m: the code to generate the 1-look images and their corresponding gradient magnitude fields for training, the .txt file containing the list of path will be generated at the same time.
+
 demo_test_data.m: the code to generate the 1-look images and their corresponding gradient magnitude fields for testing, the .txt file containing the list of path will also be generated at the same time.
+
 demo_test_real_data.m: the code used to generate the gradient magnitude fields of any testing data, simulated SAR images or real SAR images depending on your choice.
-mexgrad.c: the mex code implementing gradient computation by GR, to compile it, please type the following command in matlab: mex mexgrad.c
+
+mexgrad.c: the mex code implementing gradient computation by GR, to compile it, please type the following command in matlab: 
+mex mexgrad.c
+
 Noise.m: multiplying a clean image with speckle noise. You can specify the number of looks for the speckle noise.
 
 ##2. Training HED on the gradient magnitude fields.
