@@ -2,7 +2,9 @@
 This repository contains the implementation of paper GRHED [download](https://hal.archives-ouvertes.fr/hal-02424315/). 
 
 version 1.1-March 20, 2020
+
 by Chenguang Liu 
+
 Email: chenguangl@whu.edu.cn
 
 
@@ -94,6 +96,8 @@ You can continue to train HED from a pretrained models with the following comman
 python run-hed-restore.py --train --config-file hed/configs/hed-restore.yaml
 
 ## 4. Testing
+You can contact me to ask for the pretrained models.
+
 Choose a models trained with a certain number of iterations by setting 
 
 test_snapshot: 
