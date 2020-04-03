@@ -76,7 +76,9 @@ You can consult the link 'https://github.com/moabitcoin/holy-edge' if you want t
 3. we have a run-hed-restore.py and hed-restore.yaml for continue training.
 
 After setting up, you can run the following command to download the clean augmented BSDS500 images:
+
 export OMP_NUM_THREADS=1
+
 python run-hed.py --download-data --config-file hed/configs/hed.yaml
 
 After downloading, the path to the clean training images should be data/HED-BSDS/train.
