@@ -7,7 +7,7 @@ Email: chenguangl@whu.edu.cn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ## NOTICE: 
-The source code of GRHED is modified from the code (tensorflow implementation) of the paper Holistically-Nested Edge Detection (https://dl.acm.org/doi/10.5555/3158436.3158453)
+The source code of GRHED is modified from the code (tensorflow implementation) of the paper Holistically-Nested Edge Detection (https://dl.acm.org/doi/10.5555/3158436.3158453).
 The code is hosted at 'https://github.com/moabitcoin/holy-edge'
 and also hosted at `https://github.com/harsimrat-eyeem/holy-edge` - Harsimrat Sandhawalia
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
