@@ -132,7 +132,7 @@ cd edgemap
 Then run demo_map.m to obtain the binary edge map with a certain threshold.
 edgenms.m applies the Non-maxima suppression step used in Structured edge. To successfully run the code edgenms.m, you should download the code of structured edge from the link: 'https://github.com/pdollar/edges'. You should also download the Pitor' matlab toolbox from the link: https://pdollar.github.io/toolbox/
 
-After downloading them, you should modify the path to them in edgenms.m
+After downloading them, you should modify the path to them in demo_map.m
 
 Then you should be able to obtain binary edge maps from the gradient magnitude fields computed by GRHED.
 
