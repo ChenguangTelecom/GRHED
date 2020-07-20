@@ -91,7 +91,7 @@ void mexFunction(int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[])
          double Mxd=0;
          double Myg=0;
          double Myd=0;
-         for(k=0;k<=longueur;k++)
+         for(k=1;k<=longueur;k++)
          {
             double coeff=exp(-(double) abs(k)/beta);
             int yl1;
