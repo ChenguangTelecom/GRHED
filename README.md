@@ -99,7 +99,7 @@ You can continue to train HED from a pretrained models with the following comman
 python run-hed-restore.py --train --config-file hed/configs/hed-restore.yaml
 
 ## 4. Testing with pretrained models (it also works without GPU)
-You can download the pretrained models from https://drive.google.com/file/d/1Gt_o6vXNAd3UIq5rvCcJwnlf4W7XKN4D/view?usp=sharing . If you can't download it, please contact me by email.
+You can download the pretrained models from ‘https://drive.google.com/file/d/1Gt_o6vXNAd3UIq5rvCcJwnlf4W7XKN4D/view?usp=sharing . If you can't download it, please contact me by email.
 
 The path of the pretrained models should be like 'source_code_GRHED/GRHED-models/models/hed-model-10000*', where '10000' is the number of training iterations.
 
