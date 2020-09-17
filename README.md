@@ -57,6 +57,8 @@ Installing requirements with the following command:
 
 cd GRHED
 
+You need to install tensorflow with python 2.7. For training, GPU is required. For testing, it is not mandatory to use GPU. You can test the pretrained models using cpu with 'export CUDA_VISIBLE_DEVICES=1'.
+
 pip install -r requirements.txt
 
 export OMP_NUM_THREADS=1
@@ -85,7 +87,7 @@ python run-hed.py --download-data --config-file hed/configs/hed.yaml
 
 After downloading, the path to the clean training images should be data/HED-BSDS/train.
 
-## 3. Training
+## 3. Training 
 export CUDA_VISIBLE_DEVICES=0
 
 export OMP_NUM_THREADS=1
@@ -95,8 +97,10 @@ python run-hed.py --train --config-file hed/configs/hed.yaml
 You can continue to train HED from a pretrained models with the following command
 python run-hed-restore.py --train --config-file hed/configs/hed-restore.yaml
 
-## 4. Testing
-You can contact me to ask for the pretrained models.
+## 4. Testing with pretrained models (it also works without GPU)
+You can download the pretrained models from https://drive.google.com/file/d/1Gt_o6vXNAd3UIq5rvCcJwnlf4W7XKN4D/view?usp=sharing . If you can't download it, please contact me by email.
+
+The path of the pretrained models should be like 'source_code_GRHED/GRHED-models/models/hed-model-10000*', where '10000' is the number of training iterations.
 
 Choose a models trained with a certain number of iterations by setting 
 
