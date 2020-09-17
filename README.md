@@ -53,11 +53,12 @@ mex mexgrad.c
 Noise.m: multiplying a clean image with speckle noise. You can specify the number of looks for the speckle noise.
 
 ## 2. Training HED on the gradient magnitude fields.
+
+You need to install tensorflow with python 2.7. For training, GPU is required. For testing, it is not mandatory to use GPU. You can test the pretrained models using cpu with 'export CUDA_VISIBLE_DEVICES=1'.
+
 Installing requirements with the following command:
 
 cd GRHED
-
-You need to install tensorflow with python 2.7. For training, GPU is required. For testing, it is not mandatory to use GPU. You can test the pretrained models using cpu with 'export CUDA_VISIBLE_DEVICES=1'.
 
 pip install -r requirements.txt
 
