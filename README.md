@@ -125,6 +125,9 @@ export OMP_NUM_THREADS=1
 
 python run-hed-restore.py --test --config-file hed/configs/hed-restore.yaml
 
+Notice that the model is trained on the gradient feature maps of training images, so they are only applicable to the gradient feature maps
+of testing images. For the testing of your images, you should first preprocess the images with gradient computation, you can find a demo from 'demo_test_real_data.m'. Then use the pretrained model to process these gradient feature maps.
+
 To better understanding the code of HED, please refer to 'https://github.com/moabitcoin/holy-edge'.
 
 ## 5. Postprocessing to obtain edge maps.
