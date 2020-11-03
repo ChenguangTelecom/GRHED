@@ -54,7 +54,18 @@ Noise.m: multiplying a clean image with speckle noise. You can specify the numbe
 
 ## 2. Training HED on the gradient magnitude fields.
 
-You need to install tensorflow with python 2.7. For training, GPU is required. For testing, it is not mandatory to use GPU. You can test the pretrained models using cpu with 'export CUDA_VISIBLE_DEVICES=1'.
+You need to install tensorflow with python 2.7. You can install tensorflow 1.12.0 with anaconda using the following command:
+
+conda create -n yourenv python=2.7
+
+conda activate yourenv/source activate yourenv
+
+conda install tensorflow-gpu=1.12.0
+
+
+
+
+For training, GPU is required. For testing, it is not mandatory to use GPU. You can test the pretrained models using cpu with 'export CUDA_VISIBLE_DEVICES=1'.
 
 Installing requirements with the following command:
 
