@@ -1,0 +1,63 @@
+# Before you do anything please set download_path
+# or the location where you have downloaded the rar_file
+# snapshot for now : /nas2/harsimrat/hed-testing-deconv-hist-4/models/hed-model-5000
+rar_file: 'http://vcl.ucsd.edu/hed/HED-BSDS.tar'
+# location where HED-BSDS.tar would be downloaded and decompressed (Should already exist)
+download_path: '/ldaphome/cheliu/source_code_GRHED/data'
+# location of snapshot and tensorbaord summary events (Should already exist)
+save_dir: /ldaphome/cheliu/source_code_GRHED/GRHED-models-continue
+# location where to put the generated edgemaps during testing (Should already exist)
+test_output: /ldaphome/cheliu/source_code_GRHED/GRHED-test-continue
+
+restore_dir: /ldaphome/cheliu/source_code_GRHED/GRHED-models
+restore_snapshot: 10000
+
+# training batch size, decide with your GPU size
+batch_size_train: 10
+# validation batch size, ran every val_interval
+batch_size_val: 10
+# split 30k training images for trainig/validation
+train_split: 0.8
+# maximum iterations to run epoc == 30k/batch_size
+max_iterations: 100002
+# optimizer params (not used currently Adam is used by defailt)
+optimizer: 'adam'
+optimizer_params:
+    learning_rate: 0.00001
+    weight_decay: 0.0002
+# Section 4.1 Loss for layer fusion
+loss_weights: 1.0
+# save snapshot every save_interval iterations
+save_interval: 5000
+# validate on held out dataset
+val_interval: 10
+# learning rate decay (Not used with Adam currently)
+learning_rate_decay: 0.1
+# Apply weighted_cross_entropy_loss to outputs from each side layer
+# Setting to false only loss after last conv layer is computed
+deep_supervision: True
+# Targets are continous if True else binary {0, 1}
+target_regression: True
+# Mean pixel value to subtract from the gradient magnitude fields with alpha=1,2,3,4,5,6
+mean_pixel_value: [0.1602, 0.1745, 0.1790, 0.1835, 0.1895, 0.1956]
+
+# training/validation data
+training:
+    dir: HED-BSDS
+    list: HED-BSDS/train_pair_mat_1look_alpha_123456.lst
+    #
+    image_width: 480
+    image_height: 480
+    n_channels: 1
+# testing data
+testing:
+    dir: HED-BSDS
+    list: HED-BSDS/test_mat_cd_123456.lst
+    #
+    image_width: 480
+    image_height: 320
+    n_channels: 1
+# use snapshot after test_snapshot intervals for testing
+test_snapshot: 10000
+# Apply testing_threshold after sigmoid to generate binary maps set to 0.0 for continous valued edge maps
+testing_threshold: 0.0
