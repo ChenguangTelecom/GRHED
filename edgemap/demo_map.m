@@ -15,7 +15,7 @@ path_data=strcat(path_1,index_image,path_end);
 
 % gradient magnitude larger than threshold is edge pixel, and noise pixel otherwise
 
-for threshold=0.45
+for threshold=0.55
 %add the path to the structured edge code
 addpath(genpath('/data/cheliu/2018-2019/Desktop/edges-master'));
 %add the path to the Piotr's matlab toolbox
