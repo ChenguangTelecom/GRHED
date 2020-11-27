@@ -155,4 +155,21 @@ After downloading them, you should modify the path to them in demo_map.m
 
 Then you should be able to obtain binary edge maps from the gradient magnitude fields computed by GRHED.
 
+
+## 4. Testing with pretrained models on your own image
+I add a testing file so that you can test the pretrained model on your own 1-look image directly (the image size should be dividable by 16). You do not need to precompute the gradient feature maps in this testing as I add it in the code. To test the pretrained model
+on your own image (it should be saved as .mat file and the image data should be named as noisy), just run:
+
+cd GRHED
+
+source activate yourenv/conda activate yourenv
+
+export OMP_NUM_THREADS=1
+
+python run-test.py --config-file hed/configs/hed.yaml --test-snapshot 10000 --test-image PATH-TO-YOUR-IMAGE-mat-file
+
+The edge probability map is saved in 'temp_field'.
+
+The you run demo_map.m to obtain the binary edge map. 
+
 ## If you have any questions, please feel free to contact me by email: chenguangl@whu.edu.cn
