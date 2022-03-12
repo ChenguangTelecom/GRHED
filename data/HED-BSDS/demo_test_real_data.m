@@ -2,6 +2,8 @@ close all
 clear all
 clc
 %load your own data and name it as noisy; 
+    %noisy = imread(filename)
+    noisy = double(im2gray(noisy));
     I=noisy;
     [M_data,N_data]=size(noisy);
     data_final=zeros(M_data,N_data,6);
